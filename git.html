@@ -11,6 +11,9 @@
     <div class="layout-container">
         <aside class="sidebar">
             <header class="sidebar-header">
+                <div class="logo-container">
+                    <img src="logo_new.png" alt="Логотип" class="site-logo">
+                </div>
                 <h1 class="site-title"><a href="index.html">Системне програмування</a></h1>
                 <p class="site-subtitle">Дмитро Самборик 1-КТ-23</p>
             </header>
@@ -58,19 +61,29 @@
 
    
             <section class="content-section" id="git-about">
-                <h2>1. Системи контролю версій та Git</h2>
-                <p>
-                    <strong>Система контролю версій (VCS — Version Control System)</strong> — це спеціалізоване програмне забезпечення, 
-                    яке фіксує та структурує історію змін файлів у проєкті з плином часу. Воно дозволяє за потреби повернутися до будь-якої 
-                    попередньої версії коду, детально порівняти ревізії, виявити авторів конкретних правок та ефективно організувати спільну 
-                    командну роботу над кодовою базою без ризику випадкового перезапису чи втрати даних.
-                </p>
-                <p>
-                    <strong>Git</strong> — це швидка децентралізована (розподілена) система контролю версій, розроблена Лінусом Торвальдсом 
-                    у 2005 році для координації розробки ядра Linux. На відміну від застарілих централізованих систем (таких як Subversion чи CVS), 
-                    у Git кожен розробник має на локальному комп'ютері повну копію всього репозиторію з історією комітів, що забезпечує 
-                    миттєве виконання операцій та автономність роботи без постійного підключення до сервера чи мережі Інтернет.
-                </p>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <img src="git-logo.png" alt="Git Logo" style="height: 60px;">
+                    <h2>1. Системи контролю версій та Git</h2>
+                </div>
+                <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <p>
+                            <strong>Система контролю версій (VCS — Version Control System)</strong> — це спеціалізоване програмне забезпечення, 
+                            яке фіксує та структурує історію змін файлів у проєкті з плином часу. Воно дозволяє за потреби повернутися до будь-якої 
+                            попередньої версії коду, детально порівняти ревізії, виявити авторів конкретних правок та ефективно організувати спільну 
+                            командну роботу над кодовою базою без ризику випадкового перезапису чи втрати даних.
+                        </p>
+                        <p>
+                            <strong>Git</strong> — це швидка децентралізована (розподілена) система контролю версій, розроблена Лінусом Торвальдсом 
+                            у 2005 році для координації розробки ядра Linux. На відміну від застарілих централізованих систем (таких як Subversion чи CVS), 
+                            у Git кожен розробник має на локальному комп'ютері повну копію всього репозиторію з історією комітів, що забезпечує 
+                            миттєве виконання операцій та автономність роботи без постійного підключення до сервера чи мережі Інтернет.
+                        </p>
+                    </div>
+                    <div style="flex-basis: 300px; text-align: center;">
+                        <img src="git-illustration.png" alt="Git Illustration" style="max-width: 100%; border-radius: 8px; background: white; padding: 10px;">
+                    </div>
+                </div>
             </section>
 
  
@@ -173,6 +186,12 @@
                     
                     <img src="test.png" alt="Сертифікат проходження курсу по Git" class="certificate-img" onload="document.getElementById('cert-placeholder').style.display='none';" onerror="this.style.display='none';">
                     
+                    <div style="margin-top: 1rem;">
+                        <a href="test.png" download="Git_Certificate.png" class="btn-download">
+                            [↓] Завантажити сертифікат
+                        </a>
+                    </div>
+
                     <div id="cert-placeholder" class="certificate-placeholder">
                         <div class="placeholder-border">
                             <span class="placeholder-icon">[ ФАЙЛ СЕРТИФІКАТА ]</span>
@@ -229,7 +248,29 @@
         </main>
     </div>
 
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget">
+        <button id="ai-chat-toggle" class="ai-chat-toggle">AI Чат 💬</button>
+        <div id="ai-chat-window" class="ai-chat-window" style="display: none;">
+            <div class="ai-chat-header">
+                <span>AI Асистент</span>
+                <div>
+                    <button id="ai-chat-fullscreen" title="На весь екран" style="margin-right: 5px;">⛶</button>
+                    <button id="ai-chat-close" title="Закрити">&times;</button>
+                </div>
+            </div>
+            <div id="ai-chat-messages" class="ai-chat-messages">
+                <!-- Messages go here -->
+            </div>
+            <div class="ai-chat-input-container">
+                <input type="text" id="ai-chat-input" placeholder="Запитайте щось про Git...">
+                <button id="ai-chat-send">▶</button>
+            </div>
+        </div>
+    </div>
+
     <!-- СКРИПТ -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

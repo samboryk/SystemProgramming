@@ -13,6 +13,9 @@
 
         <aside class="sidebar">
             <header class="sidebar-header">
+                <div class="logo-container">
+                    <img src="logo_new.png" alt="Логотип" class="site-logo">
+                </div>
                 <h1 class="site-title"><a href="index.html">Системне програмування</a></h1>
                 <p class="site-subtitle">Дмитро Самборик 1-КТ-23</p>
             </header>
@@ -101,28 +104,52 @@
             <!-- РОЗДІЛ: ДОВІДКОВА ІНФОРМАЦІЯ -->
             <section class="content-section" id="course-meta">
                 <h2>Інформація про портфоліо</h2>
-                <table class="meta-table">
-                    <tbody>
-                        <tr>
-                            <td>Дисципліна:</td>
-                            <td>Системне програмування - 67</td>
-                        </tr>
-                        <tr>
-                            <td>Призначення:</td>
-                            <td>Збереження навчальних матеріалів, лабораторних звітів та підтверджень компетенцій</td>
-                        </tr>
-                        <tr>
-                            <td>Студент:</td>
-                            <td>Дмитро Самборик 1-КТ-23</td>
-                        </tr>
-
-                    </tbody>
-                </table>
+                <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                    <img src="test.png" alt="Студент" style="max-width: 150px; border: 2px solid var(--border-dark); border-radius: 8px;">
+                    <table class="meta-table" style="flex: 1; min-width: 250px;">
+                        <tbody>
+                            <tr>
+                                <td>Дисципліна:</td>
+                                <td>Системне програмування - 67</td>
+                            </tr>
+                            <tr>
+                                <td>Призначення:</td>
+                                <td>Збереження навчальних матеріалів, лабораторних звітів та підтверджень компетенцій</td>
+                            </tr>
+                            <tr>
+                                <td>Студент:</td>
+                                <td>Дмитро Самборик 1-КТ-23</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
 
         </main>
     </div>
 
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget">
+        <button id="ai-chat-toggle" class="ai-chat-toggle">AI Чат 💬</button>
+        <div id="ai-chat-window" class="ai-chat-window" style="display: none;">
+            <div class="ai-chat-header">
+                <span>AI Асистент</span>
+                <div>
+                    <button id="ai-chat-fullscreen" title="На весь екран" style="margin-right: 5px;">⛶</button>
+                    <button id="ai-chat-close" title="Закрити">&times;</button>
+                </div>
+            </div>
+            <div id="ai-chat-messages" class="ai-chat-messages">
+                <!-- Messages go here -->
+            </div>
+            <div class="ai-chat-input-container">
+                <input type="text" id="ai-chat-input" placeholder="Запитайте щось...">
+                <button id="ai-chat-send">▶</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
