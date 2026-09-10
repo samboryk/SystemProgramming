@@ -1,460 +1,128 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Системне програмування | Опрацювання теми Git</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Системне програмування</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Бокове меню (Sidebar) -->
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-      <div class="sidebar-logo">&lt;/&gt;</div>
-      <div>
-        <h2>Системне програмування</h2>
-        <span>Навчальний портал</span>
-      </div>
-    </div>
+    <div class="layout-container">
 
-    <div class="sidebar-content">
-      <div class="sidebar-section-title">
-        <span>Навчальні теми</span>
-      </div>
 
-      <ul class="topics-list" id="topicsList">
-        <li class="topic-item active" id="topicGitItem">
-          <span class="topic-name">🌿 1. Система Git</span>
-          <span class="topic-badge">Активно</span>
-        </li>
-      </ul>
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <h1 class="site-title"><a href="index.html">Системне програмування</a></h1>
+                <p class="site-subtitle">Дмитро Самборик 1-КТ-23</p>
+            </header>
 
-      <button type="button" class="btn-add-topic" id="btnAddTopic">
-        <span>+</span> Додати тему
-      </button>
+            <nav class="sidebar-nav">
+                <p class="nav-section-title">Навігація</p>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <span class="nav-prefix">&gt;</span> Головна (Теми)
+                        </a>
+                    </li>
+                </ul>
 
-      <div class="sidebar-section-title" style="margin-top: 24px;">
-        <span>Розділи теми Git</span>
-      </div>
-      <ul class="subnav-list">
-        <li><a href="#about" class="subnav-link">📌 Про СКВ та Git</a></li>
-        <li><a href="#features" class="subnav-link">⚡ Переваги та можливості</a></li>
-        <li><a href="#commands" class="subnav-link">💻 10 базових команд</a></li>
-        <li><a href="#certificate" class="subnav-link">🎓 Сертифікат курсу</a></li>
-        <li><a href="#sources" class="subnav-link">📚 Джерела інформації</a></li>
-      </ul>
-    </div>
+                <p class="nav-section-title">Розділи курсу</p>
+                <ul class="nav-list">
+                    <!-- 
+                        ЯК ДОДАТИ НОВИЙ ПУНКТ МЕНЮ:
+                        1. Створіть новий файл (наприклад, "linux.html").
+                        2. Додайте посилання у цей список:
+                           <li class="nav-item">
+                               <a href="linux.html" class="nav-link"><span class="nav-prefix">&gt;</span> .linux</a>
+                           </li>
+                    -->
+                    <li class="nav-item">
+                        <a href="git.html" class="nav-link">
+                            <span class="nav-prefix">&gt;</span> Git
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
-    <div class="sidebar-footer">
-      <div>Кафедра системного програмування</div>
-      <small>© 2026 Самборик</small>
-    </div>
-  </aside>
+            <footer class="sidebar-footer">
+                <p>&copy; 2026. Системне програмування.</p>
+            </footer>
+        </aside>
 
-  <!-- Головна область перегляду -->
-  <div class="main-wrapper">
-    <!-- Мобільний рядок навігації -->
-    <header class="mobile-header">
-      <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Відкрити меню">&#9776;</button>
-      <strong>Системне програмування</strong>
-      <span style="font-size: 0.8rem; color: #f05032;">Git</span>
-    </header>
+        <main class="main-content">
 
-    <main class="main-content">
-      <!-- 1. Контейнер теми Git -->
-      <div id="gitTopicContainer">
-        
-        <!-- Hero блок -->
-        <header class="hero-header">
-          <span class="hero-badge">Завдання №1 • Тема Git</span>
-          <h1 class="hero-title">Система контролю версій Git</h1>
-          <p class="hero-subtitle">
-            Огляд розподіленої системи контролю версій: принципи роботи, архітектура, ключові команди для щоденної розробки та підсумковий сертифікат.
-          </p>
-        </header>
+            <header class="content-header">
+                <span class="category-tag">Навчальний курс</span>
+                <h1 class="content-title">Системне програмування</h1>
+                <p class="content-lead">
+                    Електронне академічне портфоліо: тематичні конспекти, звіти з лабораторних робіт, довідники команд та сертифікації.
+                </p>
+                <hr class="separator">
+            </header>
 
-        <!-- Секція 1: Про СКВ та Git (Вікіпедія) -->
-        <section id="about" class="content-section">
-          <div class="section-header">
-            <div class="section-icon">📖</div>
-            <h2 class="section-title">1. Що таке СКВ та Git</h2>
-          </div>
 
-          <div class="info-box">
-            <strong>За даними Вікіпедії:</strong>
-            <p>
-              <strong>Система керування версіями (СКВ, англ. Version Control System, VCS)</strong> — програмне забезпечення для полегшення роботи зі змінною інформацією (вихідним кодом програм, текстовими документами, кресленнями тощо). СКВ дозволяє зберігати історію змін, порівнювати різні редакції, відкочуватися до попередніх станів і забезпечує паралельну командну роботу без перезапису коду колег.
-            </p>
-          </div>
-
-          <p style="margin-bottom: 16px;">
-            <strong>Git (вимовляється «ґіт»)</strong> — це найпопулярніша у світі розподілена система керування версіями файлів та коду з відкритим кодом. Її створив у <strong>квітні 2005 року Лінус Торвальдс</strong> (автор ядра Linux) після відмови власників комерційної системи BitKeeper надавати безкоштовну ліцензію спільноті Linux.
-          </p>
-
-          <blockquote class="wiki-quote">
-            «Лінус Торвальдс іронічно зауважив щодо назви: "Я самозакоханий егоїст, тому називаю всі свої проекти на власну честь. Спочатку був Linux, тепер — Git" (в англійському сленгу слово "git" означає "неприємна, вперта людина")».
-          </blockquote>
-
-          <div class="grid-two-cols" style="margin-top: 20px;">
-            <div class="feature-card">
-              <h4>🏛️ Централізовані СКВ (CVS, SVN)</h4>
-              <p>Існує один головний сервер-сховище. Якщо він недоступний або пошкоджений — розробники не можуть фіксувати коміти або ризикують втратити всю історію проекту.</p>
-            </div>
-            <div class="feature-card" style="border-color: #f05032;">
-              <h4>🌐 Розподілені СКВ (Git)</h4>
-              <p>Кожен розробник клонує репозиторій повністю: разом із усією історією правок, гілками та тегами. Будь-яка локальна копія є повноцінним резервним сховищем.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Секція 2: Переваги та можливості Git -->
-        <section id="features" class="content-section">
-          <div class="section-header">
-            <div class="section-icon">⚡</div>
-            <h2 class="section-title">2. Основні можливості та переваги Git</h2>
-          </div>
-
-          <p style="margin-bottom: 20px; color: var(--text-muted);">
-            Завдяки своїй оригінальній архітектурі, створеній для розробки ядра Linux з тисячами контриб'юторів, Git забезпечує низку визначальних переваг:
-          </p>
-
-          <div class="grid-two-cols">
-            <div class="feature-card">
-              <h4>🚀 Висока швидкодія</h4>
-              <p>Майже всі операції (перегляд історії <code>log</code>, порівняння <code>diff</code>, фіксація <code>commit</code>) виконуються миттєво на локальному диску без мережевих затримок.</p>
-            </div>
-
-            <div class="feature-card">
-              <h4>🌿 Дешеве і легке гілкування</h4>
-              <p>Створення нової гілки в Git — це запис лише 41 байта (хеш-вказівник на коміт). Перемикання та злиття (merge) відбуваються майже миттєво.</p>
-            </div>
-
-            <div class="feature-card">
-              <h4>🔒 Криптографічна цілісність даних</h4>
-              <p>Кожен файл, каталог та коміт хешуються алгоритмом SHA. Неможливо непомітно змінити бодай один символ чи дату коміту без зміни всього ланцюжка хешів.</p>
-            </div>
-
-            <div class="feature-card">
-              <h4>📦 Область підготовки (Staging Area / Index)</h4>
-              <p>Проміжний буфер між робочим каталогом та історією. Дозволяє формувати акуратні, атомарні коміти, додаючи лише обрані зміни.</p>
-            </div>
-
-            <div class="feature-card">
-              <h4>🔌 Автономність (Офлайн-режим)</h4>
-              <p>Розробник може повноцінно працювати в поїзді, літаку чи без інтернету: створювати гілки, робити коміти, переглядати історію, а синхронізацію виконати пізніше.</p>
-            </div>
-
-            <div class="feature-card">
-              <h4>🌍 Глобальний стандарт індустрії</h4>
-              <p>Git підтримується всіма хмарними платформами (GitHub, GitLab, Bitbucket) та глибоко інтегрований у всі сучасні редактори (VS Code, JetBrains тощо).</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Секція 3: 10 базових команд Git -->
-        <section id="commands" class="content-section">
-          <div class="section-header">
-            <div class="section-icon">💻</div>
-            <h2 class="section-title">3. 10 базових команд роботи в Git</h2>
-          </div>
-
-          <p style="margin-bottom: 24px; color: var(--text-muted);">
-            Найважливіші команди, необхідні для щоденної практичної роботи розробника. Натисніть кнопку <strong>Копіювати</strong>, щоб швидко використати команду в терміналі.
-          </p>
-
-          <div class="commands-grid">
-            
-            <!-- Команда 1 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git init</span>
-                <button class="btn-copy" data-code="git init">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>1. Ініціалізація нового репозиторію</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Створює новий порожній Git-репозиторій у поточному каталозі. З'являється прихована папка <code>.git</code>, що містить усі структури метаданих, конфігурацію та об'єкти історії.
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 2 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git clone &lt;url_репозиторію&gt;</span>
-                <button class="btn-copy" data-code="git clone https://github.com/samboryk/SystemProgramming.git">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>2. Клонування існуючого репозиторію</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Завантажує повну копію віддаленого проекту (з GitHub, GitLab тощо) на ваш комп'ютер разом з усією історією комітів та налаштованим віддаленим джерелом <code>origin</code>.
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 3 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git status</span>
-                <button class="btn-copy" data-code="git status">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>3. Перевірка статусу файлів</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Показує поточний стан робочого каталогу та індексу (staging area): які файли змінено, які підготовлено до коміту (staged), а які ще не відстежуються (untracked).
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 4 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git add &lt;файл&gt; або git add .</span>
-                <button class="btn-copy" data-code="git add .">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>4. Додавання змін до області підготовки (Staging Area)</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Переносить зміни із робочої директорії в індекс. Команда <code>git add .</code> індексує абсолютно всі змінені та нові файли у поточному каталозі для включення в наступний коміт.
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 5 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git commit -m "Повідомлення коміту"</span>
-                <button class="btn-copy" data-code='git commit -m "first commit"'>Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>5. Фіксація змін (створення коміту)</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Створює знімок стану (snapshot) підготовлених файлів у базі репозиторію. Прапорець <code>-m</code> додає обов'язковий змістовний коментар про те, що саме було змінено або виправлено.
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 6 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git branch -M main</span>
-                <button class="btn-copy" data-code="git branch -M main">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>6. Керування гілками та встановлення головної гілки</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Команда <code>git branch</code> показує список гілок, а комбінація <code>-M main</code> примусово перейменовує поточну гілку на <code>main</code> (сучасний стандарт найменування замість застарілого master).
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 7 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git switch &lt;назва_гілки&gt;</span>
-                <button class="btn-copy" data-code="git switch -c feature-branch">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>7. Перемикання та створення гілок</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Сучасний аналог <code>git checkout</code>. Дозволяє безпечно перейти на іншу гілку, а команда <code>git switch -c &lt;ім'я&gt;</code> одночасно створює нову гілку і перемикається на неї.
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 8 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git merge &lt;назва_гілки&gt;</span>
-                <button class="btn-copy" data-code="git merge feature-branch">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>8. Злиття гілок (Merge)</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Інтегрує історію вказаної гілки у вашу поточну активну гілку. Якщо в однакових рядках файлів є суперечливі зміни, Git створює стан конфлікту для ручного вирішення.
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 9 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git push -u origin main</span>
-                <button class="btn-copy" data-code="git push -u origin main">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>9. Відправка змін на віддалений сервер</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Вивантажує ваші локальні коміти на віддалений сервер (GitHub/GitLab). Прапорець <code>-u</code> (upstream) пов'язує локальну гілку з віддаленою для подальших простих викликів <code>git push</code>.
-                </div>
-              </div>
-            </div>
-
-            <!-- Команда 10 -->
-            <div class="command-card">
-              <div class="command-top">
-                <span class="command-code">git pull origin main</span>
-                <button class="btn-copy" data-code="git pull origin main">Копіювати</button>
-              </div>
-              <div class="command-body">
-                <div class="command-desc"><strong>10. Отримання та злиття оновлень з сервера</strong></div>
-                <div class="command-comment">
-                  <strong>Коментар:</strong> Одночасно завантажує найновіші зміни з віддаленого сервера (fetch) та зливає їх (merge) у поточну робочу гілку, актуалізуючи вашу копію проекту.
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Секція 4: Сертифікат курсу -->
-        <section id="certificate" class="content-section">
-          <div class="section-header">
-            <div class="section-icon">🎓</div>
-            <h2 class="section-title">4. Сертифікат проходження курсу по Git</h2>
-          </div>
-
-          <div class="certificate-container">
-            <!-- Зображення попереднього перегляду, якщо користувач завантажив свій файл -->
-            <img id="certImagePreview" class="custom-cert-preview" alt="Ваш завантажений сертифікат" />
-
-            <!-- Основний шаблон сертифікату -->
-            <div class="certificate-card" id="certTemplateCard">
-              <div class="cert-stamp">✓</div>
+            <section class="content-section" id="topics-overview">
               
-              <div class="cert-header">
-                <h3 class="cert-title">Сертифікат про закінчення</h3>
-                <p class="cert-subtitle">Підтвердження успішного опанування технології</p>
-              </div>
+                <div class="topics-list">
+                    
 
-              <div class="cert-body">
-                <p class="cert-awarded">Цей сертифікат засвідчує, що</p>
-                <div class="cert-student-name" id="certStudentName">Самборик</div>
-                <p class="cert-course-name">успішно завершив(ла) навчальний курс «Git & GitHub для системних розробників»</p>
-              </div>
+                    <a href="git.html" class="topic-card">
+                        <div class="topic-card-body">
+                            <div class="topic-card-header">
+                                <span class="topic-card-title">Git</span>
+                                <span class="topic-badge badge-available">Доступно</span>
+                            </div>
+                            <p class="topic-card-desc">
+                                Системи контролю версій: розподілена архітектура, ключові переваги, таблиця 10 базових команд із коментарями, сертифікат проходження курсу та джерела.
+                            </p>
+                        </div>
+                        <span class="topic-action-arrow">&rarr;</span>
+                    </a>
 
-              <div class="cert-details-grid">
-                <div class="cert-detail-item">
-                  <strong>Дисципліна</strong>
-                  <span>Системне програмування</span>
+                   
+                    <div class="topic-card disabled">
+                        <div class="topic-card-body">
+                            <div class="topic-card-header">
+                                <span class="topic-card-title">Bash</span>
+                                <span class="topic-badge badge-planned">Заплановано</span>
+                            </div>
+                            <p class="topic-card-desc">
+                                
+                            </p>
+                        </div> 
+                    </div>
+
+                  
+
                 </div>
-                <div class="cert-detail-item">
-                  <strong>Рівень знань</strong>
-                  <span>Базовий / Intermediate</span>
-                </div>
-                <div class="cert-detail-item">
-                  <strong>Дата перевірки</strong>
-                  <span>Вересень 2026 р.</span>
-                </div>
-                <div class="cert-detail-item">
-                  <strong>Серійний номер</strong>
-                  <span>GIT-SYS-2026-0818</span>
-                </div>
-              </div>
-            </div>
+            </section>
 
-            <!-- Панель керування сертифікатом -->
-            <div class="cert-controls">
-              <button type="button" class="btn-cert" id="btnEditCertName">
-                ✏️ Змінити прізвище студента
-              </button>
-              
-              <label class="btn-cert" style="cursor: pointer;">
-                📁 Прикріпити власний файл сертифікату
-                <input type="file" id="certFileInput" accept="image/*" style="display: none;">
-              </label>
+            <!-- РОЗДІЛ: ДОВІДКОВА ІНФОРМАЦІЯ -->
+            <section class="content-section" id="course-meta">
+                <h2>Інформація про портфоліо</h2>
+                <table class="meta-table">
+                    <tbody>
+                        <tr>
+                            <td>Дисципліна:</td>
+                            <td>Системне програмування</td>
+                        </tr>
+                        <tr>
+                            <td>Призначення:</td>
+                            <td>Збереження навчальних матеріалів, лабораторних звітів та підтверджень компетенцій</td>
+                        </tr>
+                        <tr>
+                            <td>Студент:</td>
+                            <td>Дмитро Самборик 1-КТ-23</td>
+                        </tr>
 
-              <button type="button" class="btn-cert" id="btnResetCert" style="display: none; background-color: #64748b;">
-                ↺ Скинути до стандарту
-              </button>
-            </div>
-          </div>
-        </section>
+                    </tbody>
+                </table>
+            </section>
 
-        <!-- Секція 5: Джерела інформації -->
-        <section id="sources" class="content-section">
-          <div class="section-header">
-            <div class="section-icon">📚</div>
-            <h2 class="section-title">5. Джерела інформації по темі</h2>
-          </div>
-
-          <div class="sources-list">
-            <a href="https://uk.wikipedia.org/wiki/Git" target="_blank" rel="noopener noreferrer" class="source-card">
-              <div class="source-icon">🌐</div>
-              <div class="source-info">
-                <h4>Вікіпедія: Git ↗</h4>
-                <p>Україномовна стаття Вікіпедії про історію виникнення, концепції об'єктної моделі, архітектуру та автора Git.</p>
-              </div>
-            </a>
-
-            <a href="https://uk.wikipedia.org/wiki/Система_керування_версіями" target="_blank" rel="noopener noreferrer" class="source-card">
-              <div class="source-icon">📖</div>
-              <div class="source-info">
-                <h4>Вікіпедія: СКВ ↗</h4>
-                <p>Класифікація систем контролю версій: порівняння централізованих і децентралізованих архітектур.</p>
-              </div>
-            </a>
-
-            <a href="https://git-scm.com/doc" target="_blank" rel="noopener noreferrer" class="source-card">
-              <div class="source-icon">📘</div>
-              <div class="source-info">
-                <h4>Офіційна документація Git SCM ↗</h4>
-                <p>Вичерпні мануали та довідник за всіма параметрами та прапорцями команд Git від розробників.</p>
-              </div>
-            </a>
-
-            <a href="https://git-scm.com/book/uk/v2" target="_blank" rel="noopener noreferrer" class="source-card">
-              <div class="source-info" style="display: flex; gap: 14px; align-items: center;">
-                <div class="source-icon">📙</div>
-                <div>
-                  <h4>Книга «Pro Git» (Український переклад) ↗</h4>
-                  <p>Безкоштовний авторитетний підручник Скотта Чакона та Бена Страуба про професійне володіння Git.</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </section>
-
-      </div>
-
-      <!-- 2. Контейнер для додаткових тем, які користувач може додавати у боковому меню -->
-      <div id="customTopicContainer" class="custom-topic-placeholder">
-        <div style="font-size: 3rem; margin-bottom: 10px;">📋</div>
-        <h2 id="currentTopicDisplayTitle">Назва теми</h2>
-        <p id="currentTopicDesc">Матеріали для цієї теми перебувають на стадії опрацювання.</p>
-        <button type="button" class="btn-primary" id="btnBackToGit">
-          ← Повернутися до теми "Git"
-        </button>
-      </div>
-
-    </main>
-  </div>
-
-  <!-- Модальне вікно додавання теми -->
-  <div class="modal-backdrop" id="modalAddTopic">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3>Додати нову навчальну тему</h3>
-        <button type="button" class="modal-close" id="btnCloseModal">&times;</button>
-      </div>
-      <form id="formAddTopic">
-        <div class="form-group">
-          <label for="topicTitleInput">Назва теми:</label>
-          <input type="text" id="topicTitleInput" class="form-input" placeholder="Наприклад: Процеси та потоки" required>
-        </div>
-        <div class="form-group">
-          <label for="topicDescInput">Короткий опис / завдання (необов'язково):</label>
-          <input type="text" id="topicDescInput" class="form-input" placeholder="Опрацювання POSIX потоків pthread...">
-        </div>
-        <div class="modal-actions">
-          <button type="button" class="btn-secondary" id="btnCancelModal">Скасувати</button>
-          <button type="submit" class="btn-primary">Додати тему</button>
-        </div>
-      </form>
+        </main>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

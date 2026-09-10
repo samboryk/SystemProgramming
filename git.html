@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git — Системне програмування</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <h1 class="site-title"><a href="index.html">Системне програмування</a></h1>
+                <p class="site-subtitle">Дмитро Самборик 1-КТ-23</p>
+            </header>
+
+
+            <nav class="sidebar-nav">
+                <p class="nav-section-title">Навігація</p>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-prefix">&lt;</span> Головна (Теми)
+                        </a>
+                    </li>
+                </ul>
+
+                <p class="nav-section-title">Розділи курсу</p>
+                <ul class="nav-list">
+                  
+                    <li class="nav-item">
+                        <a href="git.html" class="nav-link active">
+                            <span class="nav-prefix">&gt;</span> Git
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <footer class="sidebar-footer">
+                <p>&copy; 2026. Системне програмування.</p>
+            </footer>
+        </aside>
+
+        <main class="main-content">
+
+            <nav class="breadcrumbs" aria-label="Шлях по сайту">
+                <a href="index.html">Головна</a>
+                <span>/</span>
+                <span>Git</span>
+            </nav>
+
+            <header class="content-header">
+                <span class="category-tag">Тема I</span>
+                <h1 class="content-title">Система контролю версій Git</h1>
+                <hr class="separator">
+            </header>
+
+   
+            <section class="content-section" id="git-about">
+                <h2>1. Системи контролю версій та Git</h2>
+                <p>
+                    <strong>Система контролю версій (VCS — Version Control System)</strong> — це спеціалізоване програмне забезпечення, 
+                    яке фіксує та структурує історію змін файлів у проєкті з плином часу. Воно дозволяє за потреби повернутися до будь-якої 
+                    попередньої версії коду, детально порівняти ревізії, виявити авторів конкретних правок та ефективно організувати спільну 
+                    командну роботу над кодовою базою без ризику випадкового перезапису чи втрати даних.
+                </p>
+                <p>
+                    <strong>Git</strong> — це швидка децентралізована (розподілена) система контролю версій, розроблена Лінусом Торвальдсом 
+                    у 2005 році для координації розробки ядра Linux. На відміну від застарілих централізованих систем (таких як Subversion чи CVS), 
+                    у Git кожен розробник має на локальному комп'ютері повну копію всього репозиторію з історією комітів, що забезпечує 
+                    миттєве виконання операцій та автономність роботи без постійного підключення до сервера чи мережі Інтернет.
+                </p>
+            </section>
+
+ 
+            <section class="content-section" id="git-features">
+                <h2>2. Основні можливості та переваги використання Git</h2>
+                <ul class="styled-list">
+                    <li>
+                        <strong>Розподілена архітектура:</strong> кожен учасник проєкту має автономну копію повної бази даних репозиторію, що усуває єдину точку відмови (Single Point of Failure).
+                    </li>
+                    <li>
+                        <strong>Висока швидкість та оптимізована продуктивність:</strong> операції створення комітів, перегляду журналу та диференційного порівняння виконуються локально з мінімальними накладними витратами.
+                    </li>
+                    <li>
+                        <strong>Легковажні гілки (Lightweight Branching & Merging):</strong> розгалуження та злиття кодових баз реалізовано через вказівники на зрізи стану (snapshots), що робить ізоляцію функціоналу швидкою та безпечною.
+                    </li>
+                    <li>
+                        <strong>Криптографічна цілісність даних:</strong> кожен об'єкт та коміт підписується криптографічним хешем (SHA-1 / SHA-256), що гарантує неможливість непомітної модифікації або пошкодження історії.
+                    </li>
+                    <li>
+                        <strong>Область підготовки (Staging Area / Index):</strong> проміжний шар між робочим деревом та історією комбітів забезпечує гнучкий контроль над формуванням атомарних логічних змін.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="git-commands">
+                <h2>3. 10 базових команд роботи в системі Git</h2>
+                <div class="commands-table-wrapper">
+                    <table class="commands-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="col-num">#</th>
+                                <th scope="col" class="col-cmd">Команда</th>
+                                <th scope="col" class="col-desc">Коментар та практичне призначення</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-num">1</td>
+                                <td><code>git init</code></td>
+                                <td>Ініціалізує новий порожній локальний репозиторій Git у поточній директорії (створює системну приховану папку <code>.git</code>).</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">2</td>
+                                <td><code>git clone &lt;url&gt;</code></td>
+                                <td>Клонує існуючий віддалений репозиторій за вказаною адресою на локальну машину разом з усіма гілками та повною історією.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">3</td>
+                                <td><code>git status</code></td>
+                                <td>Показує поточний стан робочого дерева: відстежувані, змінені, видалені та додані до індексу файли.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">4</td>
+                                <td><code>git add &lt;file&gt;</code></td>
+                                <td>Додає зазначений файл (або <code>git add .</code> для всіх змінених файлів) до staging area для наступного коміту.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">5</td>
+                                <td><code>git commit -m "&lt;msg&gt;"</code></td>
+                                <td>Фіксує підготовлені в індексі зміни у вигляді нового зрізу історії з коротким пояснювальним повідомленням.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">6</td>
+                                <td><code>git branch</code></td>
+                                <td>Переглядає список локальних гілок (поточна відмічена зірочкою) або створює нову гілку при виклику <code>git branch &lt;name&gt;</code>.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">7</td>
+                                <td><code>git switch &lt;branch&gt;</code></td>
+                                <td>Перемикає робоче дерево на вказану гілку (сучасний безпечний аналог команди <code>git checkout &lt;branch&gt;</code>).</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">8</td>
+                                <td><code>git merge &lt;branch&gt;</code></td>
+                                <td>Об'єднує історію змін із зазначеної гілки в поточну активну робочу гілку.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">9</td>
+                                <td><code>git pull</code></td>
+                                <td>Отримує найсвіжіші зміни з віддаленого сервера та автоматично зливає їх з поточною локальною гілкою.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">10</td>
+                                <td><code>git push &lt;remote&gt; &lt;branch&gt;</code></td>
+                                <td>Відправляє зафіксовані локальні коміти до віддаленого репозиторію (наприклад, <code>git push origin main</code>).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. Сертифікат курсу -->
+            <section class="content-section" id="git-certificate">
+                <h2>4. Сертифікат курсу по Git</h2>
+                <p class="section-description">
+                    Підтвердження успішного завершення навчального курсу або сертифікації з практичного використання Git:
+                </p>
+                
+                <div class="certificate-box">
+                    
+                    <img src="test.png" alt="Сертифікат проходження курсу по Git" class="certificate-img" onload="document.getElementById('cert-placeholder').style.display='none';" onerror="this.style.display='none';">
+                    
+                    <div id="cert-placeholder" class="certificate-placeholder">
+                        <div class="placeholder-border">
+                            <span class="placeholder-icon">[ ФАЙЛ СЕРТИФІКАТА ]</span>
+                            <p class="placeholder-title">Місце для зображення сертифіката курсу</p>
+                            <p class="placeholder-hint">Додайте файл зображення (наприклад, <code>certificate.png</code>) та вкажіть його у тегу <code>&lt;img src="..." alt="Сертифікат"&gt;</code></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Джерела інформації -->
+            <section class="content-section" id="git-sources">
+                <h2>5. Джерела інформації по темі</h2>
+                <ul class="styled-list sources-list">
+                    <li>
+                        <a href="https://git-scm.com/book/uk/v2" target="_blank" rel="noopener noreferrer">
+                            Pro Git Book (Scott Chacon and Ben Straub) — Офіційний україномовний переклад
+                        </a>
+                        <span class="source-note">— класичний академічний підручник з повною архітектурою внутрішньої будови Git.</span>
+                    </li>
+                    <li>
+                        <a href="https://git-scm.com/docs" target="_blank" rel="noopener noreferrer">
+                            Git Reference Manual
+                        </a>
+                        <span class="source-note">— офіційне вичерпне довідкове керівництво з усіх команд, ключів та параметрів.</span>
+                    </li>
+                    <li>
+                        <a href="https://docs.github.com/en" target="_blank" rel="noopener noreferrer">
+                            GitHub Documentation
+                        </a>
+                        <span class="source-note">— посібники з командної розробки, pull requests та організації робочих процесів.</span>
+                    </li>
+                    <li>
+                        <a href="https://www.atlassian.com/git/tutorials" target="_blank" rel="noopener noreferrer">
+                            Atlassian Git Tutorials
+                        </a>
+                        <span class="source-note">— детальні методичні статті з Git workflows, злиття та розв'язання конфліктів.</span>
+                    </li>
+                    <li>
+                        <a href="https://learngitbranching.js.org/?locale=uk" target="_blank" rel="noopener noreferrer">
+                            Learn Git Branching (Інтерактивний тренажер)
+                        </a>
+                        <span class="source-note">— візуальна практична платформа для вивчення складних операцій з графом комітів.</span>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- СКРИПТ -->
+    <script src="script.js"></script>
+</body>
+</html>
