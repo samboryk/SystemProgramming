@@ -207,8 +207,11 @@ body {
 }
 
 .site-logo {
-    max-width: 110px;
+    max-width: 90px;
+    max-height: 90px;
+    width: auto;
     height: auto;
+    object-fit: contain;
     filter: drop-shadow(0 4px 12px rgba(99, 102, 241, 0.4));
     transition: transform 0.3s ease;
 }
