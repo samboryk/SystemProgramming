@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Системне програмування</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- System Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+            <img src="assets/images/logo_new.png" alt="Logo" class="preloader-logo">
+            <div class="preloader-text">ІНІЦІАЛІЗАЦІЯ СИСТЕМИ<span class="dots">...</span></div>
+            <div class="preloader-bar"><div class="preloader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Вгору" title="Нагору">↑</button>
+
+    <!-- Background Mesh Ambient Glows -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Mobile Top Navigation Header -->
+    <div class="mobile-topbar">
+        <div class="mobile-logo-group">
+            <img src="assets/images/logo_new.png" alt="Логотип" class="mobile-logo">
+            <span class="mobile-title">Системне програмування</span>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Відкрити меню">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
 
     <div class="layout-container">
 
@@ -14,7 +49,7 @@
         <aside class="sidebar">
             <header class="sidebar-header">
                 <div class="logo-container">
-                    <img src="logo_new.png" alt="Логотип" class="site-logo">
+                    <img src="assets/images/logo_new.png" alt="Логотип" class="site-logo">
                 </div>
                 <h1 class="site-title"><a href="index.html">Системне програмування</a></h1>
                 <p class="site-subtitle">Дмитро Самборик 1-КТ-23</p>
@@ -45,10 +80,18 @@
                             <span class="nav-prefix">&gt;</span> Git
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="linux.html" class="nav-link">
+                            <span class="nav-prefix">&gt;</span> Linux & BASH
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
             <footer class="sidebar-footer">
+                <div class="sidebar-footer-logo">
+                    <img src="assets/images/samboryk-logo.png" alt="SAMBORYK" class="footer-samboryk-logo">
+                </div>
                 <p>&copy; 2026. Системне програмування.</p>
             </footer>
         </aside>
@@ -84,14 +127,27 @@
                     </a>
 
                    
+                    <a href="linux.html" class="topic-card">
+                        <div class="topic-card-body">
+                            <div class="topic-card-header">
+                                <span class="topic-card-title">Linux & BASH</span>
+                                <span class="topic-badge badge-available">Доступно</span>
+                            </div>
+                            <p class="topic-card-desc">
+                                Операційна система GNU/Linux: огляд дистрибутивів, таблиця 10 CLI команд, BASH-скрипт текстової авторизації з інтерактивним емулятором термінала.
+                            </p>
+                        </div> 
+                        <span class="topic-action-arrow">&rarr;</span>
+                    </a>
+
                     <div class="topic-card disabled">
                         <div class="topic-card-body">
                             <div class="topic-card-header">
-                                <span class="topic-card-title">Bash</span>
+                                <span class="topic-card-title">Python</span>
                                 <span class="topic-badge badge-planned">Заплановано</span>
                             </div>
                             <p class="topic-card-desc">
-                                
+                                Системне програмування на Python: робота з файловою системою, процесами, міжпроцесною взаємодією (IPC) та розробка утиліт автоматизації.
                             </p>
                         </div> 
                     </div>
@@ -105,7 +161,7 @@
             <section class="content-section" id="course-meta">
                 <h2>Інформація про портфоліо</h2>
                 <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
-                    <img src="test.png" alt="Студент" style="max-width: 150px; border: 2px solid var(--border-dark); border-radius: 8px;">
+                    <img src="assets/images/test.png" alt="Студент" style="max-width: 150px; border: 2px solid var(--border-highlight); border-radius: 12px; box-shadow: var(--shadow-card);">
                     <table class="meta-table" style="flex: 1; min-width: 250px;">
                         <tbody>
                             <tr>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux & BASH — Системне програмування</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo_new.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- System Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+            <img src="logo_new.png" alt="Logo" class="preloader-logo">
+            <div class="preloader-text">ІНІЦІАЛІЗАЦІЯ СИСТЕМИ<span class="dots">...</span></div>
+            <div class="preloader-bar"><div class="preloader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Вгору" title="Нагору">↑</button>
+
+    <!-- Background Mesh Ambient Glows -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Mobile Top Navigation Header -->
+    <div class="mobile-topbar">
+        <div class="mobile-logo-group">
+            <img src="logo_new.png" alt="Логотип" class="mobile-logo">
+            <span class="mobile-title">Системне програмування</span>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Відкрити меню">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+
+    <div class="layout-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <div class="logo-container">
+                    <img src="logo_new.png" alt="Логотип" class="site-logo">
+                </div>
+                <h1 class="site-title"><a href="index.html">Системне програмування</a></h1>
+                <p class="site-subtitle">Дмитро Самборик 1-КТ-23</p>
+            </header>
+
+            <nav class="sidebar-nav">
+                <p class="nav-section-title">Навігація</p>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <span class="nav-prefix">&lt;</span> Головна (Теми)
+                        </a>
+                    </li>
+                </ul>
+
+                <p class="nav-section-title">Розділи курсу</p>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="git.html" class="nav-link">
+                            <span class="nav-prefix">&gt;</span> Git
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="linux.html" class="nav-link active">
+                            <span class="nav-prefix">&gt;</span> Linux & BASH
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <footer class="sidebar-footer">
+                <div class="sidebar-footer-logo">
+                    <img src="samboryk-logo.png" alt="SAMBORYK" class="footer-samboryk-logo">
+                </div>
+                <p>&copy; 2026. Системне програмування.</p>
+            </footer>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <nav class="breadcrumbs" aria-label="Шлях по сайту">
+                <a href="index.html">Головна</a>
+                <span>/</span>
+                <span>Linux & BASH</span>
+            </nav>
+
+            <header class="content-header">
+                <span class="category-tag">Тема II</span>
+                <h1 class="content-title">Операційна система GNU/Linux та Shell BASH</h1>
+                <p class="content-lead">
+                    Основи архітектури Unix-подібних систем, огляд популярних дистрибутивів, довідник команд CLI та розробка BASH-скрипту текстової авторизації.
+                </p>
+                <hr class="separator">
+            </header>
+
+            <!-- 1. Інформація про GNU/Linux -->
+            <section class="content-section" id="linux-about">
+                <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                    <div style="display: flex; gap: 1rem; align-items: center;">
+                        <img src="linux-logo.svg" alt="Linux Tux Logo" style="height: 64px; width: auto; filter: drop-shadow(0 4px 10px rgba(56, 189, 248, 0.4));">
+                        <img src="bash-logo.svg" alt="Bash Logo" style="height: 56px; width: auto; filter: drop-shadow(0 4px 10px rgba(99, 102, 241, 0.4));">
+                    </div>
+                    <h2>1. Коротка інформація про ОС GNU/Linux</h2>
+                </div>
+                <p>
+                    <strong>GNU/Linux</strong> — це вільна, відкрита (Open Source) Unix-подібна операційна система, побудована на базі ядра Linux, 
+                    створеного Лінусом Торвальдсом у 1991 році, та системних утиліт і бібліотек проекту <strong>GNU</strong> (Free Software Foundation).
+                </p>
+                <p>
+                    Архітектура Linux відрізняється високим рівнем модульності, надійності та безпеки. Основні компоненти включають ядро (Kernel), 
+                    командну оболонку (Shell), системні бібліотеки (glibc) та користувацькі утиліти. Linux є стандартом де-факто для сучасних 
+                    хмарних обчислень, суперкомп'ютерів (100% зі списку TOP500), веб-серверів, Docker-контейнерів, мобільних ОС (Android) та вбудованих систем (IoT).
+                </p>
+            </section>
+
+            <!-- 2. Популярні дистрибутиви -->
+            <section class="content-section" id="linux-distros">
+                <h2>2. Популярні дистрибутиви Linux</h2>
+                <p class="section-description">
+                    Дистрибутив Linux — це готова операційна система, яка об'єднує ядро Linux, системні утиліти, менеджер пакетів та графічне або текстове середовище.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><img src="ubuntu-logo.svg" alt="Ubuntu" style="width: 32px; height: 32px;"></div>
+                        <h3 class="feature-title">Ubuntu</h3>
+                        <p class="feature-desc">
+                            Найпопулярніший дистрибутив на базі Debian для робочих станцій та серверів. Відрізняється дружнім інтерфейсом та величезною спільнотою.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><img src="debian-logo.svg" alt="Debian" style="width: 32px; height: 32px;"></div>
+                        <h3 class="feature-title">Debian</h3>
+                        <p class="feature-desc">
+                            Один із найстаріших і найстабільніших дистрибутивів із суворими стандартами вільного ПЗ. Слугує основою для Ubuntu, Linux Mint та інших ОС.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><img src="fedora-logo.svg" alt="Fedora" style="width: 32px; height: 32px;"></div>
+                        <h3 class="feature-title">Fedora / RHEL</h3>
+                        <p class="feature-desc">
+                            Інноваційна платформа від Red Hat. RHEL (Red Hat Enterprise Linux) є корпоративним стандартом для банківських та системних інфраструктур.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><img src="arch-logo.svg" alt="Arch Linux" style="width: 32px; height: 32px;"></div>
+                        <h3 class="feature-title">Arch Linux</h3>
+                        <p class="feature-desc">
+                            Легковагий дистрибутив для досвідчених користувачів з принципом "KISS" (Keep It Simple, Stupid) та оновленням за моделью Rolling Release.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><img src="alpine-logo.png" alt="Alpine Linux" style="width: 32px; height: 32px; object-fit: contain;"></div>
+                        <h3 class="feature-title">Alpine Linux</h3>
+                        <p class="feature-desc">
+                            Ультралегка та безпечна ОС розміром усього ~5 МБ на базі musl libc та BusyBox. Стандарт для створення Docker-контейнерів.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><img src="kali-logo.svg" alt="Kali Linux" style="width: 32px; height: 32px;"></div>
+                        <h3 class="feature-title">Kali Linux</h3>
+                        <p class="feature-desc">
+                            Спеціалізований дистрибутив для фахівців із кібербезпеки, що містить сотні попередньо встановлених інструментів для пентестингу.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Таблиця команд Linux CLI -->
+            <section class="content-section" id="linux-commands">
+                <h2>3. Приклади команд роботи в Linux CLI</h2>
+                <p class="section-description">
+                    Основні базові команди командного інтерфейсу (Command Line Interface), необхідні для орієнтування, маніпуляції файлами та управління системою:
+                </p>
+                <div class="commands-table-wrapper">
+                    <table class="commands-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="col-num">#</th>
+                                <th scope="col" class="col-cmd">Команда</th>
+                                <th scope="col" class="col-desc">Призначення та опис</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="col-num">1</td>
+                                <td><div class="cmd-cell"><code>pwd</code> <button class="copy-btn" data-copy="pwd" title="Скопіювати">📋</button></div></td>
+                                <td><strong>Print Working Directory:</strong> виводить абсолютний шлях до поточного робочого каталогу сесії.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">2</td>
+                                <td><div class="cmd-cell"><code>echo &lt;text&gt;</code> <button class="copy-btn" data-copy="echo &quot;Hello Linux&quot;" title="Скопіювати">📋</button></div></td>
+                                <td>Виводить рядок тексту або значення змінної оточення у стандартний потік виводу терміналу.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">3</td>
+                                <td><div class="cmd-cell"><code>ls -la</code> <button class="copy-btn" data-copy="ls -la" title="Скопіювати">📋</button></div></td>
+                                <td><strong>List Directory:</strong> відображає вміст каталогу (прапорці <code>-l</code> — детальний список, <code>-a</code> — включаючи приховані файли).</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">4</td>
+                                <td><div class="cmd-cell"><code>cd &lt;dir&gt;</code> <button class="copy-btn" data-copy="cd /var/log" title="Скопіювати">📋</button></div></td>
+                                <td><strong>Change Directory:</strong> змінює поточний робочий каталог (наприклад, <code>cd ..</code> переходить на рівень вище).</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">5</td>
+                                <td><div class="cmd-cell"><code>touch &lt;file&gt;</code> <button class="copy-btn" data-copy="touch script.sh" title="Скопіювати">📋</button></div></td>
+                                <td>Створює новий порожній файл або оновлює часову мітку останнього доступу до існуючого файлу.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">6</td>
+                                <td><div class="cmd-cell"><code>mkdir -p &lt;path&gt;</code> <button class="copy-btn" data-copy="mkdir -p project/src" title="Скопіювати">📋</button></div></td>
+                                <td><strong>Make Directory:</strong> створює нову директорію (прапорець <code>-p</code> створює повний ланцюжок батьківських папок).</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">7</td>
+                                <td><div class="cmd-cell"><code>cp &lt;src&gt; &lt;dest&gt;</code> <button class="copy-btn" data-copy="cp file.txt copy.txt" title="Скопіювати">📋</button></div></td>
+                                <td><strong>Copy:</strong> копіює файли або директорії (для папок використовується рекурсивний прапорець <code>cp -r</code>).</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">8</td>
+                                <td><div class="cmd-cell"><code>mv &lt;src&gt; &lt;dest&gt;</code> <button class="copy-btn" data-copy="mv old_name.txt new_name.txt" title="Скопіювати">📋</button></div></td>
+                                <td><strong>Move:</strong> переміщує або перейменовує файли та директорії в файловій системі.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">9</td>
+                                <td><div class="cmd-cell"><code>rm -rf &lt;path&gt;</code> <button class="copy-btn" data-copy="rm -rf temp_dir" title="Скопіювати">📋</button></div></td>
+                                <td><strong>Remove:</strong> видаляє файли або папки (прапорці <code>-r</code> рекурсивно, <code>-f</code> примусово без запиту підтвердження).</td>
+                            </tr>
+                            <tr>
+                                <td class="col-num">10</td>
+                                <td><div class="cmd-cell"><code>history</code> <button class="copy-btn" data-copy="history" title="Скопіювати">📋</button></div></td>
+                                <td>Виводить номерний список останніх виконаних команд у командній оболонці BASH.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. BASH Script Auth -->
+            <section class="content-section" id="bash-script">
+                <h2>4. BASH-скрипт аутентифікації у текстовому режимі</h2>
+                <p>
+                    Нижче наведено практичний BASH-скрипт (<code>auth.sh</code>), який моделює процес автентифікації користувача в консолі Linux. 
+                    Скрипт запитує логін і пароль (із приховуванням введення <code>read -s</code>), перевіряє їх та надає або блокує доступ.
+                </p>
+
+                <div class="code-block-header">
+                    <span>📄 auth.sh (BASH Script)</span>
+                    <button class="copy-btn" data-copy="#!/bin/bash
+# Скрипт авторизації користувача у текстовому режимі
+VALID_USER=&quot;admin&quot;
+VALID_PASS=&quot;secret123&quot;
+MAX_ATTEMPTS=3
+attempt=1
+
+echo &quot;==========================================&quot;
+echo &quot;   СИСТЕМА АВТОРИЗАЦІЇ LINUX (BASH CLI)   &quot;
+echo &quot;==========================================&quot;
+
+while [ $attempt -le $MAX_ATTEMPTS ]; do
+    echo -n &quot;Введіть ім'я користувача: &quot;
+    read username
+
+    echo -n &quot;Введіть пароль: &quot;
+    read -s password
+    echo &quot;&quot;
+
+    if [ &quot;$username&quot; = &quot;$VALID_USER&quot; ] &amp;&amp; [ &quot;$password&quot; = &quot;$VALID_PASS&quot; ]; then
+        echo &quot;[УСПІХ] Авторизація успішна! Ласкаво просимо, $username.&quot;
+        exit 0
+    else
+        echo &quot;[ПОМИЛКА] Невірне ім'я користувача або пароль.&quot;
+        attempts_left=$((MAX_ATTEMPTS - attempt))
+        if [ $attempts_left -gt 0 ]; then
+            echo &quot;Залишилось спроб: $attempts_left&quot;
+            echo &quot;------------------------------------------&quot;
+        fi
+    fi
+    attempt=$((attempt + 1))
+done
+
+echo &quot;[БЛОКУВАННЯ] Перевищено кількість спроб. Доступ заборонено.&quot;
+exit 1">📋 Скопіювати код</button>
+                </div>
+                <pre class="code-box"><code><span class="code-comment">#!/bin/bash</span>
+<span class="code-comment"># Скрипт авторизації користувача у текстовому режимі</span>
+<span class="code-keyword">VALID_USER</span>=<span class="code-string">"admin"</span>
+<span class="code-keyword">VALID_PASS</span>=<span class="code-string">"secret123"</span>
+<span class="code-keyword">MAX_ATTEMPTS</span>=3
+<span class="code-var">attempt</span>=1
+
+<span class="code-builtin">echo</span> <span class="code-string">"=========================================="</span>
+<span class="code-builtin">echo</span> <span class="code-string">"   СИСТЕМА АВТОРИЗАЦІЇ LINUX (BASH CLI)   "</span>
+<span class="code-builtin">echo</span> <span class="code-string">"=========================================="</span>
+
+<span class="code-keyword">while</span> [ <span class="code-var">$attempt</span> -le <span class="code-var">$MAX_ATTEMPTS</span> ]; <span class="code-keyword">do</span>
+    <span class="code-builtin">echo</span> -n <span class="code-string">"Введіть ім'я користувача: "</span>
+    <span class="code-builtin">read</span> username
+
+    <span class="code-builtin">echo</span> -n <span class="code-string">"Введіть пароль: "</span>
+    <span class="code-builtin">read</span> -s password
+    <span class="code-builtin">echo</span> <span class="code-string">""</span>
+
+    <span class="code-keyword">if</span> [ <span class="code-string">"<span class="code-var">$username</span>"</span> = <span class="code-string">"<span class="code-var">$VALID_USER</span>"</span> ] &amp;&amp; [ <span class="code-string">"<span class="code-var">$password</span>"</span> = <span class="code-string">"<span class="code-var">$VALID_PASS</span>"</span> ]; <span class="code-keyword">then</span>
+        <span class="code-builtin">echo</span> <span class="code-string">"[УСПІХ] Авторизація успішна! Ласкаво просимо, <span class="code-var">$username</span>."</span>
+        <span class="code-keyword">exit</span> 0
+    <span class="code-keyword">else</span>
+        <span class="code-builtin">echo</span> <span class="code-string">"[ПОМИЛКА] Невірне ім'я користувача або пароль."</span>
+        <span class="code-var">attempts_left</span>=$((MAX_ATTEMPTS - attempt))
+        <span class="code-keyword">if</span> [ <span class="code-var">$attempts_left</span> -gt 0 ]; <span class="code-keyword">then</span>
+            <span class="code-builtin">echo</span> <span class="code-string">"Залишилось спроб: <span class="code-var">$attempts_left</span>"</span>
+            <span class="code-builtin">echo</span> <span class="code-string">"------------------------------------------"</span>
+        <span class="code-keyword">fi</span>
+    <span class="code-keyword">fi</span>
+    <span class="code-var">attempt</span>=$((attempt + 1))
+<span class="code-keyword">done</span>
+
+<span class="code-builtin">echo</span> <span class="code-string">"[БЛОКУВАННЯ] Перевищено кількість спроб. Доступ заборонено."</span>
+<span class="code-keyword">exit</span> 1</code></pre>
+
+                <!-- Interactive Web Terminal Simulator -->
+                <h3 style="margin-top: 2rem; margin-bottom: 0.75rem; color: var(--text-cyan);">💻 Інтерактивна демонстрація роботи BASH-скрипту</h3>
+                <p class="section-description">
+                    Ви можете протестувати виконання даного скрипту безпосередньо у веб-терміналі нижче (Тестові дані: логін: <code>admin</code>, пароль: <code>secret123</code>):
+                </p>
+
+                <div class="terminal-demo">
+                    <div class="terminal-demo-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="terminal-title">bash auth.sh — 80x24</span>
+                    </div>
+                    <div id="terminal-body" class="terminal-body">
+                        <div class="term-line">==========================================</div>
+                        <div class="term-line">   СИСТЕМА АВТОРИЗАЦІЇ LINUX (BASH CLI)   </div>
+                        <div class="term-line">==========================================</div>
+                        <div id="term-output"></div>
+                        <div class="term-input-row">
+                            <span id="term-prompt" class="term-prompt">Введіть ім'я користувача: </span>
+                            <input type="text" id="term-input" autocomplete="off" spellcheck="false">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Джерела -->
+            <section class="content-section" id="linux-sources">
+                <h2>5. Джерела інформації по темі</h2>
+                <ul class="styled-list sources-list">
+                    <li>
+                        <a href="https://www.kernel.org" target="_blank" rel="noopener noreferrer">
+                            Linux Kernel Archives (kernel.org)
+                        </a>
+                        <span class="source-note">— офіційний репозиторій вихідного коду ядра Linux.</span>
+                    </li>
+                    <li>
+                        <a href="https://www.gnu.org/gnu/linux-and-gnu.html" target="_blank" rel="noopener noreferrer">
+                            GNU Operating System (Free Software Foundation)
+                        </a>
+                        <span class="source-note">— філософія вільного ПЗ, ліцензії GPL та системні інструменти GNU.</span>
+                    </li>
+                    <li>
+                        <a href="https://wiki.archlinux.org" target="_blank" rel="noopener noreferrer">
+                            ArchWiki — Довідник з системного адміністрування Linux
+                        </a>
+                        <span class="source-note">— найдетальніша у світі документація з налаштування Linux систем.</span>
+                    </li>
+                    <li>
+                        <a href="https://ss64.com/bash/" target="_blank" rel="noopener noreferrer">
+                            SS64 Bash Command Line Reference
+                        </a>
+                        <span class="source-note">— довідник команд, прапорців та синтаксису скриптів командної оболонки BASH.</span>
+                    </li>
+                    <li>
+                        <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener noreferrer">
+                            Google Gemini | AntiGravity
+                        </a>
+                        <span class="source-note">— матеріал розроблено та згенеровано за допомогою штучного інтелекту AntiGravity.</span>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget">
+        <button id="ai-chat-toggle" class="ai-chat-toggle">AI Чат 💬</button>
+        <div id="ai-chat-window" class="ai-chat-window" style="display: none;">
+            <div class="ai-chat-header">
+                <span>AI Асистент</span>
+                <div>
+                    <button id="ai-chat-fullscreen" title="На весь екран" style="margin-right: 5px;">⛶</button>
+                    <button id="ai-chat-close" title="Закрити">&times;</button>
+                </div>
+            </div>
+            <div id="ai-chat-messages" class="ai-chat-messages">
+                <!-- Messages go here -->
+            </div>
+            <div class="ai-chat-input-container">
+                <input type="text" id="ai-chat-input" placeholder="Запитайте щось про Linux чи BASH...">
+                <button id="ai-chat-send">▶</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git — Системне програмування</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo_new.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- System Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+            <img src="logo_new.png" alt="Logo" class="preloader-logo">
+            <div class="preloader-text">ІНІЦІАЛІЗАЦІЯ СИСТЕМИ<span class="dots">...</span></div>
+            <div class="preloader-bar"><div class="preloader-progress"></div></div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Вгору" title="Нагору">↑</button>
+
+    <!-- Background Mesh Ambient Glows -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- Mobile Top Navigation Header -->
+    <div class="mobile-topbar">
+        <div class="mobile-logo-group">
+            <img src="logo_new.png" alt="Логотип" class="mobile-logo">
+            <span class="mobile-title">Системне програмування</span>
+        </div>
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Відкрити меню">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
 
     <div class="layout-container">
         <aside class="sidebar">
@@ -31,16 +66,23 @@
 
                 <p class="nav-section-title">Розділи курсу</p>
                 <ul class="nav-list">
-                  
                     <li class="nav-item">
                         <a href="git.html" class="nav-link active">
                             <span class="nav-prefix">&gt;</span> Git
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="linux.html" class="nav-link">
+                            <span class="nav-prefix">&gt;</span> Linux & BASH
                         </a>
                     </li>
                 </ul>
             </nav>
 
             <footer class="sidebar-footer">
+                <div class="sidebar-footer-logo">
+                    <img src="samboryk-logo.png" alt="SAMBORYK" class="footer-samboryk-logo">
+                </div>
                 <p>&copy; 2026. Системне програмування.</p>
             </footer>
         </aside>
@@ -81,7 +123,7 @@
                         </p>
                     </div>
                     <div style="flex-basis: 300px; text-align: center;">
-                        <img src="git-illustration.png" alt="Git Illustration" style="max-width: 100%; border-radius: 8px; background: white; padding: 10px;">
+                        <img src="git-illustration.png" alt="Git Illustration" style="max-width: 100%; border-radius: 12px; background: rgba(255, 255, 255, 0.95); padding: 12px; box-shadow: var(--shadow-card); border: 1px solid var(--border-highlight);">
                     </div>
                 </div>
             </section>
@@ -89,23 +131,55 @@
  
             <section class="content-section" id="git-features">
                 <h2>2. Основні можливості та переваги використання Git</h2>
-                <ul class="styled-list">
-                    <li>
-                        <strong>Розподілена архітектура:</strong> кожен учасник проєкту має автономну копію повної бази даних репозиторію, що усуває єдину точку відмови (Single Point of Failure).
-                    </li>
-                    <li>
-                        <strong>Висока швидкість та оптимізована продуктивність:</strong> операції створення комітів, перегляду журналу та диференційного порівняння виконуються локально з мінімальними накладними витратами.
-                    </li>
-                    <li>
-                        <strong>Легковажні гілки (Lightweight Branching & Merging):</strong> розгалуження та злиття кодових баз реалізовано через вказівники на зрізи стану (snapshots), що робить ізоляцію функціоналу швидкою та безпечною.
-                    </li>
-                    <li>
-                        <strong>Криптографічна цілісність даних:</strong> кожен об'єкт та коміт підписується криптографічним хешем (SHA-1 / SHA-256), що гарантує неможливість непомітної модифікації або пошкодження історії.
-                    </li>
-                    <li>
-                        <strong>Область підготовки (Staging Area / Index):</strong> проміжний шар між робочим деревом та історією комбітів забезпечує гнучкий контроль над формуванням атомарних логічних змін.
-                    </li>
-                </ul>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3 class="feature-title">Розподілена архітектура</h3>
+                        <p class="feature-desc">
+                            Кожен учасник проєкту має автономну копію повної бази даних репозиторію. Це усуває єдину точку відмови (Single Point of Failure) та дозволяє працювати повністю офлайн.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Висока швидкість та продуктивність</h3>
+                        <p class="feature-desc">
+                            Створення комітів, перегляд історії та диференційні порівняння (diff) виконуються локально з миттєвим відгуком та мінімальними накладними витратами.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3 class="feature-title">Легковажні гілки та злиття</h3>
+                        <p class="feature-desc">
+                            Розгалуження (Branching) та злиття (Merging) реалізовано через легкі вказівники на зрізи стану (snapshots), що робить ізоляцію експериментів швидкою та безпечною.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h3 class="feature-title">Криптографічна цілісність</h3>
+                        <p class="feature-desc">
+                            Усі об'єкти, коміти та файли підписуються криптографічним хешем (SHA-1 / SHA-256), що виключає можливість непомітного пошкодження або фальсифікації історії.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h3 class="feature-title">Область підготовки (Staging Area)</h3>
+                        <p class="feature-desc">
+                            Проміжний індекс між робочим деревом та історією комітів надає гнучкий контроль над точним формування атомарних та логічно завершених комітів.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3 class="feature-title">Командна співпраця та синхронізація</h3>
+                        <p class="feature-desc">
+                            Зручні механізми Push/Pull та Pull Request дозволяють тисячам розробників одночасно працювати над кодовою базою без конфліктів.
+                        </p>
+                    </div>
+                </div>
             </section>
 
             <section class="content-section" id="git-commands">
@@ -122,52 +196,52 @@
                         <tbody>
                             <tr>
                                 <td class="col-num">1</td>
-                                <td><code>git init</code></td>
+                                <td><div class="cmd-cell"><code>git init</code> <button class="copy-btn" data-copy="git init" title="Скопіювати команду">📋</button></div></td>
                                 <td>Ініціалізує новий порожній локальний репозиторій Git у поточній директорії (створює системну приховану папку <code>.git</code>).</td>
                             </tr>
                             <tr>
                                 <td class="col-num">2</td>
-                                <td><code>git clone &lt;url&gt;</code></td>
+                                <td><div class="cmd-cell"><code>git clone &lt;url&gt;</code> <button class="copy-btn" data-copy="git clone" title="Скопіювати команду">📋</button></div></td>
                                 <td>Клонує існуючий віддалений репозиторій за вказаною адресою на локальну машину разом з усіма гілками та повною історією.</td>
                             </tr>
                             <tr>
                                 <td class="col-num">3</td>
-                                <td><code>git status</code></td>
+                                <td><div class="cmd-cell"><code>git status</code> <button class="copy-btn" data-copy="git status" title="Скопіювати команду">📋</button></div></td>
                                 <td>Показує поточний стан робочого дерева: відстежувані, змінені, видалені та додані до індексу файли.</td>
                             </tr>
                             <tr>
                                 <td class="col-num">4</td>
-                                <td><code>git add &lt;file&gt;</code></td>
+                                <td><div class="cmd-cell"><code>git add &lt;file&gt;</code> <button class="copy-btn" data-copy="git add ." title="Скопіювати команду">📋</button></div></td>
                                 <td>Додає зазначений файл (або <code>git add .</code> для всіх змінених файлів) до staging area для наступного коміту.</td>
                             </tr>
                             <tr>
                                 <td class="col-num">5</td>
-                                <td><code>git commit -m "&lt;msg&gt;"</code></td>
+                                <td><div class="cmd-cell"><code>git commit -m "&lt;msg&gt;"</code> <button class="copy-btn" data-copy="git commit -m &quot;commit message&quot;" title="Скопіювати команду">📋</button></div></td>
                                 <td>Фіксує підготовлені в індексі зміни у вигляді нового зрізу історії з коротким пояснювальним повідомленням.</td>
                             </tr>
                             <tr>
                                 <td class="col-num">6</td>
-                                <td><code>git branch</code></td>
+                                <td><div class="cmd-cell"><code>git branch</code> <button class="copy-btn" data-copy="git branch" title="Скопіювати команду">📋</button></div></td>
                                 <td>Переглядає список локальних гілок (поточна відмічена зірочкою) або створює нову гілку при виклику <code>git branch &lt;name&gt;</code>.</td>
                             </tr>
                             <tr>
                                 <td class="col-num">7</td>
-                                <td><code>git switch &lt;branch&gt;</code></td>
+                                <td><div class="cmd-cell"><code>git switch &lt;branch&gt;</code> <button class="copy-btn" data-copy="git switch main" title="Скопіювати команду">📋</button></div></td>
                                 <td>Перемикає робоче дерево на вказану гілку (сучасний безпечний аналог команди <code>git checkout &lt;branch&gt;</code>).</td>
                             </tr>
                             <tr>
                                 <td class="col-num">8</td>
-                                <td><code>git merge &lt;branch&gt;</code></td>
+                                <td><div class="cmd-cell"><code>git merge &lt;branch&gt;</code> <button class="copy-btn" data-copy="git merge feature" title="Скопіювати команду">📋</button></div></td>
                                 <td>Об'єднує історію змін із зазначеної гілки в поточну активну робочу гілку.</td>
                             </tr>
                             <tr>
                                 <td class="col-num">9</td>
-                                <td><code>git pull</code></td>
+                                <td><div class="cmd-cell"><code>git pull</code> <button class="copy-btn" data-copy="git pull" title="Скопіювати команду">📋</button></div></td>
                                 <td>Отримує найсвіжіші зміни з віддаленого сервера та автоматично зливає їх з поточною локальною гілкою.</td>
                             </tr>
                             <tr>
                                 <td class="col-num">10</td>
-                                <td><code>git push &lt;remote&gt; &lt;branch&gt;</code></td>
+                                <td><div class="cmd-cell"><code>git push &lt;remote&gt; &lt;branch&gt;</code> <button class="copy-btn" data-copy="git push origin main" title="Скопіювати команду">📋</button></div></td>
                                 <td>Відправляє зафіксовані локальні коміти до віддаленого репозиторію (наприклад, <code>git push origin main</code>).</td>
                             </tr>
                         </tbody>
@@ -235,12 +309,11 @@
                             Learn Git Branching (Інтерактивний тренажер)
                         </a>
                         <span class="source-note">— візуальна практична платформа для вивчення складних операцій з графом комітів.</span>
-                    </li>
-                      <li>
-                        <a href="/" target="_blank" rel="noopener noreferrer">
-                            Google Gemini | Antigravity
+                    <li>
+                        <a href="https://deepmind.google/technologies/gemini/" target="_blank" rel="noopener noreferrer">
+                            Google Gemini | AntiGravity
                         </a>
-                        <span class="source-note">— зроблено щ використанням ШІ</span>
+                        <span class="source-note">— матеріал розроблено та згенеровано за допомогою штучного інтелекту AntiGravity.</span>
                     </li>
                 </ul>
             </section>
